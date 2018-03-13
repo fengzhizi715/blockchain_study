@@ -36,11 +36,11 @@ public class GenerateBitcoinAddress {
 
         System.out.println("checksum=" + Utils.bytesToHexString(checksum));
 
-        byte[] data6 = Utils.add(extendedRipemd160Bytes, checksum);
+        byte[] binaryBitcoinAddressBytes = Utils.add(extendedRipemd160Bytes, checksum);
 
-        System.out.println("添加checksum=" + Utils.bytesToHexString(data6));
+        System.out.println("添加checksum之后=" + Utils.bytesToHexString(binaryBitcoinAddressBytes));
 
-        String bitcoinAddress = Base58.encode(data6);
+        String bitcoinAddress = Base58.encode(binaryBitcoinAddressBytes);
         System.out.println("bitcoinAddress=" + bitcoinAddress);
     }
 
